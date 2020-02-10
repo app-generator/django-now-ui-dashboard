@@ -19,7 +19,11 @@
                 {% if msg %}
                     <label>{{ msg }}</label>
                 {% else %}
-                    <label>Sign in with your credentials</label>
+                    <label>
+                    Use default credentials: test / ApS12_ZZs8
+                    <br />
+                    OR <a href={% url 'register' %} >create your own user</a>                    
+                    </label>
                 {% endif %}
 
               </div>

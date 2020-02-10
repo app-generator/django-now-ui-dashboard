@@ -19,111 +19,124 @@
                     {% if msg %}
                       <label>{{ msg | safe }}</label>
                     {% else %}
-                      <label>Please add your registration information</label>
+                      <label>
+                      Add your credentials or <a href={% url 'login' %} >authenticate</a> with an existing account.
+                      </label>
                     {% endif %}
 
               </div>
               <div class="card-body">
 
-                <form role="form" method="post" action="">
+                {% if success %}
 
-                    {% csrf_token %}
+                    <p class="text-center">
+                    Please <a href={% url 'login' %} class="text-black text-small">authenticate</a> using the new account.
+                    </p>  
 
-                    <div class="row">
+                {% else %}
 
-                        <div class="col-md-1 pr-1"></div>
+                    <form role="form" method="post" action="">
 
-                        <div class="col-md-3 pr-1">
-                            <div class="form-group">
-                                <label>Username</label>
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-1 pr-1"></div>
+
+                            <div class="col-md-3 pr-1">
+                                <div class="form-group">
+                                    <label>Username</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6 pr-1">
-                            <div class="form-group">
-                                {{ form.username }}
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.username }}
+                                </div>
                             </div>
+
                         </div>
+                        <div class="row">
+                            <span class="text-error">{{ form.username.errors }}</span>
+                        </div>
+                        
+                        <div class="row">
 
-                    </div>
-                    <div class="row">
-                        <span class="text-error">{{ form.username.errors }}</span>
-                    </div>
-                    
-                    <div class="row">
+                            <div class="col-md-1 pr-1"></div>
 
-                        <div class="col-md-1 pr-1"></div>
-
-                        <div class="col-md-3 pr-1">
-                            <div class="form-group">
-                                <label>eMail</label>
+                            <div class="col-md-3 pr-1">
+                                <div class="form-group">
+                                    <label>eMail</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6 pr-1">
-                            <div class="form-group">
-                                {{ form.email }}
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.email }}
+                                </div>
                             </div>
+
+                        </div>
+                        <div class="row">
+                            <span class="text-error">{{ form.email.errors }}</span>
                         </div>
 
-                    </div>
-                    <div class="row">
-                        <span class="text-error">{{ form.email.errors }}</span>
-                    </div>
+                        <div class="row">
 
-                    <div class="row">
+                            <div class="col-md-1 pr-1"></div>
 
-                        <div class="col-md-1 pr-1"></div>
-
-                        <div class="col-md-3 pr-1">
-                            <div class="form-group">
-                                <label>Password</label>
+                            <div class="col-md-3 pr-1">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6 pr-1">
-                            <div class="form-group">
-                                {{ form.password1 }}
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.password1 }}
+                                </div>
                             </div>
+
+                        </div>
+                        <div class="row">
+                            <span class="text-error">{{ form.password1.errors }}</span>
                         </div>
 
-                    </div>
-                    <div class="row">
-                        <span class="text-error">{{ form.password1.errors }}</span>
-                    </div>
+                        <div class="row">
 
-                    <div class="row">
+                            <div class="col-md-1 pr-1"></div>
 
-                        <div class="col-md-1 pr-1"></div>
-
-                        <div class="col-md-3 pr-1">
-                            <div class="form-group">
-                                <label>Password Check</label>
+                            <div class="col-md-3 pr-1">
+                                <div class="form-group">
+                                    <label>Password Check</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6 pr-1">
-                            <div class="form-group">
-                                {{ form.password2 }}
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.password2 }}
+                                </div>
                             </div>
+
+                        </div>                    
+                        <div class="row">
+                            <span class="text-error">{{ form.password2.errors }}</span>
                         </div>
 
-                    </div>                    
-                    <div class="row">
-                        <span class="text-error">{{ form.password2.errors }}</span>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-1 pr-1"></div>
 
-                    <div class="row">
-                        <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-2 pr-1">
+                                <button type="submit" class="btn btn-fill btn-primary">Register</button> 
+                            </div>
 
-                        <div class="col-md-2 pr-1">
-                            <button type="submit" class="btn btn-fill btn-primary">Register</button> 
                         </div>
 
+                        </form>
                     </div>
 
-                    </form>
-                </div>
+                {% endif %}
+
               </div>
               <div class="card-footer">
                 Have already an account? Please <a href="{% url 'login' %}" >login</a>
