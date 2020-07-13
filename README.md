@@ -1,8 +1,8 @@
-# [Django Dashboard NowUI](https://appseed.us/admin-dashboards/django-dashboard-nowui)
+# [Django Dashboard - Now UI Design](https://appseed.us/admin-dashboards/django-dashboard-nowui)
 
 > **Open-Source Admin Dashboard** coded in **Flask Framework** by **AppSeed** [Web App Generator](https://appseed.us/app-generator) - features:
 
-- UI Kit: **[Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?ref=appseed)** (Free version) provided by **Creative-Tim**
+- UI Kit: **[Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?AFFILIATE=128200)** (Free version) provided by **Creative-Tim**
 - UI-Ready app, SQLite Database, Django Native ORM
 - Modular design, clean code-base
 - Session-Based Authentication, Forms validation
@@ -13,11 +13,11 @@
 
 > Links
 
-- [Django Dashboard NowUI](https://appseed.us/admin-dashboards/django-dashboard-nowui) - product page 
-- [Django Dashboard NowUI](https://django-dashboard-nowui.appseed.us/login/) - LIVE Demo
-- [Django Dashboard NowUI](https://docs.appseed.us/admin-dashboards/django-dashboard-nowui/) - Documentation
-- More [Django Admin Dashboards](https://appseed.us/admin-dashboards/django) - index hosted by **AppSeed**
-- [Free Admin Dashboards](https://appseed.us/admin-dashboards/open-source) - index hosted by **AppSeed**
+- [Django Dashboard - Now UI Design](https://appseed.us/admin-dashboards/django-dashboard-nowui) - product page 
+- [Django Dashboard Now UI Demo](https://django-dashboard-nowui.appseed.us/login/) - LIVE App
+- [Django Dashboard Now UI Docs](https://docs.appseed.us/admin-dashboards/django-dashboard-nowui/) - Documentation
+- More [Django Dashboards](https://appseed.us/admin-dashboards/django) - index hosted by **AppSeed**
+- More [Admin Dashboards](https://appseed.us/admin-dashboards) - index hosted by **AppSeed**
 
 <br />
 
@@ -153,11 +153,11 @@ Start fast your next Django project by using functional admin dashboards enhance
 
 A dashboard is a set of pages that are easy to read and offer information to the user in real-time regarding his business. A dashboard usually consists of graphical representations of the current status and trends within an organization. Having a well-designed dashboard will give you the possibility to act and make informed decisions based on the data that your business provides - *definition provided by [Creative-Tim - Free Dashboard Templates](https://www.creative-tim.com/blog/web-design/free-dashboard-templates/?ref=appseed)*.
 
-### [Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?ref=appseed)
+### [Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?AFFILIATE=128200)
 
-**[Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?ref=appseed)** is a responsive Bootstrap 4 kit provided for free by Invision and Creative Tim. It combines colors that are easy on the eye, spacious cards, beautiful typography, and graphics. It is light and easy to use, and also very powerful - provided by **Creative-Tim**.
+**[Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?AFFILIATE=128200)** is a responsive Bootstrap 4 kit provided for free by Invision and Creative Tim. It combines colors that are easy on the eye, spacious cards, beautiful typography, and graphics. It is light and easy to use, and also very powerful - provided by **Creative-Tim**.
 
 <br />
 
 ---
-[Django Dashboard NowUI](https://appseed.us/admin-dashboards/django-dashboard-nowui) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
+[Django Dashboard - Now UI Design](https://appseed.us/admin-dashboards/django-dashboard-nowui) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
