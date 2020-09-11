@@ -16,45 +16,42 @@
         <ul class="nav">
 
           {% if user.is_authenticated %}
-
-          <li class="active ">
+          <li class="{% if 'index' in segment %} active {% endif %}">
             <a href="/">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
+          <li class="{% if 'index' in segment %} active {% endif %}">
             <a href="/icons.html">
               <i class="now-ui-icons education_atom"></i>
               <p>Icons</p>
             </a>
           </li>
-          <li>
+          <li class="{% if 'index' in segment %} active {% endif %}">
             <a href="/notifications.html">
               <i class="now-ui-icons ui-1_bell-53"></i>
               <p>Notifications</p>
             </a>
           </li>
-          <li>
+          <li class="{% if 'index' in segment %} active {% endif %}">
             <a href="/user.html">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li>
+          <li class="{% if 'index' in segment %} active {% endif %}">
             <a href="/tables.html">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>Table List</p>
             </a>
           </li>
-
-          <li>
+          <li class="{% if 'index' in segment %} active {% endif %}">
             <a href="/typography.html">
               <i class="now-ui-icons text_caps-small"></i>
               <p>Typography</p>
             </a>
           </li>
-
           <li>
             <a href="{% url 'logout' %}" >
               <i class="now-ui-icons media-1_button-power"></i>
@@ -62,14 +59,20 @@
             </a>
           </li>
 
-          {% endif %}
-
           <li class="active-pro">
-            <a target="_blank" href="https://appseed.us/admin-dashboards/django" >
+            <a target="_blank" href="https://appseed.us/admin-dashboards/django-dashboard-nowui-pro" >
               <i class="now-ui-icons objects_spaceship"></i>
-              <p>More Dashboards</p>
+              <p>PRO Version</p>
             </a>
           </li>
+          {% else %}
+          <li class="active">
+            <a target="_blank" href="https://appseed.us/admin-dashboards/django-dashboard-nowui-pro" >
+              <i class="now-ui-icons objects_spaceship"></i>
+              <p>PRO Version</p>
+            </a>
+          </li>
+          {% endif %}
 
         </ul>
       </div>
