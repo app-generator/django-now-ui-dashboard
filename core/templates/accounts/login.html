@@ -1,96 +1,87 @@
-{% extends 'layouts/base.html' %}
+{% extends "layouts/base.html" %}
 
-{% block title %} Login {% endblock title %}
+{% block title %} Login {% endblock %} 
 
-<!-- Specific CSS goes HERE -->
+<!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
 
-      <div class="panel-header panel-header-sm">
-      </div>
-      <div class="content">
+    <div class="panel-header panel-header-sm">
+    </div>
+    <div class="content">
         <div class="row">
-          <div class="col-md-8">
+            <div class="col-md-8">
             <div class="card">
-              <div class="card-header">
-                <h5 class="title">Login</h5>
+                <div class="card-header">
+                    <h5 class="title">Login</h5>
+                    <span>
+                        {% if msg %}
+                            {{ msg | safe }}
+                        {% else %}
+                            Use default credentials: test / ApS12_ZZs8
+                        {% endif %}
+                    </span>                    
+                </div>
 
-                {% if msg %}
-                    <label>{{ msg }}</label>
-                {% else %}
-                    <label>
-                    Use default credentials: test / ApS12_ZZs8
-                    <br />
-                    OR <a href={% url 'register' %} >create your own user</a>                    
-                    </label>
-                {% endif %}
+                <br />
+                <div class="card-body">
 
-              </div>
-              <div class="card-body">
+                    <form role="form" method="post" action="">
 
-                <form role="form" method="post" action="">
+                        {% csrf_token %}
 
-                    {% csrf_token %}
+                        <div class="row">
 
-                    <div class="row">
-
-                        <div class="col-md-1 pr-1"></div>
-
-                        <div class="col-md-2 pr-1">
-                            <div class="form-group">
-                                <label>Username</label>
+                            <div class="col-md-2 pr-1">
+                                <div class="form-group">
+                                    <label>Username</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6 pr-1">
-                            <div class="form-group">
-                                {{ form.username }}
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.username }}
+                                </div>
                             </div>
+
                         </div>
 
-                    </div>
+                        <div class="row">
 
-                    <div class="row">
-
-                        <div class="col-md-1 pr-1"></div>
-
-                        <div class="col-md-2 pr-1">
-                            <div class="form-group">
-                                <label>Password</label>
+                            <div class="col-md-2 pr-1">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6 pr-1">
-                            <div class="form-group">
-                                {{ form.password }}
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.password }}
+                                </div>
                             </div>
+
                         </div>
 
-                    </div>
+                        <br />
+                        
+                        <div class="row">
 
-                    <div class="row">
-                        <div class="col-md-1 pr-1"></div>
+                            <div class="col-md-2 pr-1"></div>
+                            <div class="col-md-5 pr-1">
+                                <button type="submit" name="login" class="btn btn-fill btn-primary">Log in</button>
+                                &nbsp;&nbsp; or &nbsp; <a href="{% url 'register' %}" >Register</a>
+                            </div>
 
-                        <div class="col-md-2 pr-1">
-                            <button type="submit" class="btn btn-fill btn-primary">Log in</button> 
                         </div>
-
-                    </div>
 
                     </form>
                 </div>
-              </div>
-              <div class="card-footer">
-                No account? Please &nbsp;&nbsp; <a href="{% url 'register' %}" >Register</a>
-              </div>
-
-          </div>
-
+            </div>
         </div>
-      </div>
+    </div>
 
 {% endblock content %}
 
-<!-- Specific JS goes HERE --> 
+<!-- Specific Page JS goes HERE  -->
 {% block javascripts %}{% endblock javascripts %}

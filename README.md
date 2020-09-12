@@ -1,29 +1,28 @@
 # [Django Dashboard - Now UI Design](https://appseed.us/admin-dashboards/django-dashboard-nowui)
 
-> **Open-Source Admin Dashboard** coded in **Flask Framework** by **AppSeed** [Web App Generator](https://appseed.us/app-generator) - features:
+> Open-Source admin dashboard coded in **Flask Framework** by **AppSeed** [Web App Generator](https://appseed.us/app-generator) - features:
 
 - UI Kit: **[Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?AFFILIATE=128200)** (Free version) provided by **Creative-Tim**
 - UI-Ready app, SQLite Database, Django Native ORM
 - Modular design, clean code-base
 - Session-Based Authentication, Forms validation
 - Deployment scripts: Docker, Gunicorn / Nginx
-- **MIT License**
-- Free support via **Github** 
-- Paid Support **24/7 LIVE Support** via [Discord](https://discord.gg/fZC6hup)
+- **[MIT License](https://github.com/app-generator/license-mit)**
+- Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
 
 > Links
 
 - [Django Dashboard - Now UI Design](https://appseed.us/admin-dashboards/django-dashboard-nowui) - product page 
 - [Django Dashboard Now UI Demo](https://django-dashboard-nowui.appseed.us/login/) - LIVE App
 - [Django Dashboard Now UI Docs](https://docs.appseed.us/admin-dashboards/django-dashboard-nowui/) - Documentation
-- More [Django Dashboards](https://appseed.us/admin-dashboards/django) - index hosted by **AppSeed**
-- More [Admin Dashboards](https://appseed.us/admin-dashboards) - index hosted by **AppSeed**
+- More [Django Admin Dashboards](https://appseed.us/admin-dashboards/django) - index hosted by **[AppSeed](https://appseed.us)**
+- [Open-Source Admin Dashboards](https://appseed.us/admin-dashboards/open-source) - index hosted by **[AppSeed](https://appseed.us)**
 
 <br />
 
 ## Want more? Go PRO!
 
-PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Support** (via [Discord](https://discord.gg/fZC6hup)) 
+PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Support** (via [Discord](https://discord.gg/fZC6hup))
 
 | [Django Gradient PRO](https://appseed.us/admin-dashboards/django-dashboard-gradient-pro) | [Django Dashboard Black PRO](https://appseed.us/admin-dashboards/django-dashboard-black-pro) | [Django Dashboard Argon PRO](https://appseed.us/admin-dashboards/django-dashboard-argon-pro) |
 | --- | --- | --- |
@@ -32,7 +31,7 @@ PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Suppo
 <br />
 <br />
 
-![Django Dashboard NowUI - Open-Source Web App.](https://raw.githubusercontent.com/app-generator/static/master/products/django-dashboard-nowui-screen.png)
+![Boierplate Code Django Dashboard - Template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/django-dashboard-nowui/master/media/django-dashboard-nowui-screen.png)
 
 <br />
 
@@ -44,15 +43,14 @@ $ git clone https://github.com/app-generator/django-dashboard-nowui.git
 $ cd django-dashboard-nowui
 $
 $ # Virtualenv modules installation (Unix based systems)
-$ virtualenv --no-site-packages env
+$ virtualenv env
 $ source env/bin/activate
 $
 $ # Virtualenv modules installation (Windows based systems)
-$ # virtualenv --no-site-packages env
+$ # virtualenv env
 $ # .\env\Scripts\activate
-$ 
-$ # Install modules
-$ # SQLIte version
+$
+$ # Install modules - SQLite Storage
 $ pip3 install -r requirements.txt
 $
 $ # Create tables
@@ -62,11 +60,79 @@ $
 $ # Start the application (development mode)
 $ python manage.py runserver # default port 8000
 $
-$ # Start the app - custom port 
+$ # Start the app - custom port
 $ # python manage.py runserver 0.0.0.0:<your_port>
 $
 $ # Access the web app in browser: http://127.0.0.1:8000/
 ```
+
+> Note: To use the app, please access the registration page and create a new user. After authentication, the app will unlock the private pages.
+
+<br />
+
+## Code-base structure
+
+The project is coded using a simple and intuitive structure presented bellow:
+
+```bash
+< PROJECT ROOT >
+   |
+   |-- core/                               # Implements app logic and serve the static assets
+   |    |-- settings.py                    # Django app bootstrapper
+   |    |-- wsgi.py                        # Start the app in production
+   |    |-- urls.py                        # Define URLs served by all apps/nodes
+   |    |
+   |    |-- static/
+   |    |    |-- <css, JS, images>         # CSS files, Javascripts files
+   |    |
+   |    |-- templates/                     # Templates used to render pages
+   |         |
+   |         |-- includes/                 # HTML chunks and components
+   |         |    |-- navigation.html      # Top menu component
+   |         |    |-- sidebar.html         # Sidebar component
+   |         |    |-- footer.html          # App Footer
+   |         |    |-- scripts.html         # Scripts common to all pages
+   |         |
+   |         |-- layouts/                  # Master pages
+   |         |    |-- base-fullscreen.html # Used by Authentication pages
+   |         |    |-- base.html            # Used by common pages
+   |         |
+   |         |-- accounts/                 # Authentication pages
+   |         |    |-- login.html           # Login page
+   |         |    |-- register.html        # Register page
+   |         |
+   |      index.html                       # The default page
+   |     page-404.html                     # Error 404 page
+   |     page-500.html                     # Error 404 page
+   |       *.html                          # All other HTML pages
+   |
+   |-- authentication/                     # Handles auth routes (login and register)
+   |    |
+   |    |-- urls.py                        # Define authentication routes  
+   |    |-- views.py                       # Handles login and registration  
+   |    |-- forms.py                       # Define auth forms  
+   |
+   |-- app/                                # A simple app that serve HTML files
+   |    |
+   |    |-- views.py                       # Serve HTML pages for authenticated users
+   |    |-- urls.py                        # Define some super simple routes  
+   |
+   |-- requirements.txt                    # Development modules - SQLite storage
+   |
+   |-- .env                                # Inject Configuration via Environment
+   |-- manage.py                           # Start the app - Django default start script
+   |
+   |-- ************************************************************************
+```
+
+<br />
+
+> The bootstrap flow
+
+- Django bootstrapper `manage.py` uses `core/settings.py` as the main configuration file
+- `core/settings.py` loads the app magic from `.env` file
+- Redirect the guest users to Login page
+- Unlock the pages served by *app* node for authenticated users
 
 <br />
 
@@ -92,7 +158,7 @@ $ cd django-dashboard-nowui
 $ sudo docker-compose pull && sudo docker-compose build && sudo docker-compose up -d
 ```
 
-Visit `http://localhost:5005` in your browser. The app should be up & running. 
+Visit `http://localhost:5005` in your browser. The app should be up & running.
 
 <br />
 
@@ -114,6 +180,7 @@ Serving on http://localhost:8001
 ```
 
 Visit `http://localhost:8001` in your browser. The app should be up & running.
+
 
 <br />
 
@@ -140,24 +207,11 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 
 ## Credits & Links
 
-### [Django Admin Dashboards](https://appseed.us/admin-dashboards/django)
-
-Index with UI-ready **admin dashboards** generated by the AppSeed platform in [Django Framework](https://www.djangoproject.com/).
-Start fast your next Django project by using functional admin dashboards enhanced with Database, ORM, authentication flow, helpers and deployment scripts.
-
-### What is [Django](https://www.djangoproject.com/)
-
-[Django](https://www.djangoproject.com/) is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern. It is maintained by the Django Software Foundation, an independent organization established as a 501 non-profit. Django's primary goal is to ease the creation of complex, database-driven websites.
-
-### [What is a dashboard](https://en.wikipedia.org/wiki/Dashboard_(business))
-
-A dashboard is a set of pages that are easy to read and offer information to the user in real-time regarding his business. A dashboard usually consists of graphical representations of the current status and trends within an organization. Having a well-designed dashboard will give you the possibility to act and make informed decisions based on the data that your business provides - *definition provided by [Creative-Tim - Free Dashboard Templates](https://www.creative-tim.com/blog/web-design/free-dashboard-templates/?ref=appseed)*.
-
-### [Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?AFFILIATE=128200)
-
-**[Now UI Dashboard](https://www.creative-tim.com/product/now-ui-dashboard?AFFILIATE=128200)** is a responsive Bootstrap 4 kit provided for free by Invision and Creative Tim. It combines colors that are easy on the eye, spacious cards, beautiful typography, and graphics. It is light and easy to use, and also very powerful - provided by **Creative-Tim**.
+- [Django](https://www.djangoproject.com/) - The official website
+- [Boilerplate Code](https://appseed.us/boilerplate-code) - Index provided by **AppSeed**
+- [Boilerplate Code](https://github.com/app-generator/boilerplate-code) - Index published on Github
 
 <br />
 
 ---
-[Django Dashboard - Now UI Design](https://appseed.us/admin-dashboards/django-dashboard-nowui) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
+[Django Dashboard Boilerplate](https://appseed.us/boilerplate-code/django-dashboard) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
