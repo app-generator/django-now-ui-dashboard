@@ -1,0 +1,111 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Register {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="panel-header panel-header-sm">
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Register</h5>
+                    <span>
+                        {% if msg %}
+                            {{ msg | safe }}
+                        {% else %}
+                            Add your credentials
+                        {% endif %}
+                    </span>                    
+                </div>
+
+                <br />
+                <div class="card-body">
+
+                    <form role="form" method="post" action="">
+
+                        {% csrf_token %}
+
+                        <div class="row">
+                            <div class="col-md-2 pr-1">
+                                <div class="form-group">
+                                    <label>Username</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.username }}
+                                </div>
+                                <span class="text-error">{{ form.username.errors }}</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2 pr-1">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.email }}
+                                </div>
+                                <span class="text-error">{{ form.email.errors }}</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2 pr-1">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.password1 }}
+                                </div>
+                                <span class="text-error">{{ form.password1.errors }}</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2 pr-1">
+                                <div class="form-group">
+                                    <label>Password Check</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    {{ form.password2 }}
+                                </div>
+                                <span class="text-error">{{ form.password2.errors }}</span>
+                            </div>
+                        </div>
+
+                        <br />
+                        
+                        <div class="row">
+
+                            <div class="col-md-2 pr-1"></div>
+                            <div class="col-md-5 pr-1">
+                                <button type="submit" name="register" class="btn btn-fill btn-primary">Register</button>
+                                &nbsp;&nbsp; or &nbsp; <a href="{% url 'login' %}" >Login</a>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
