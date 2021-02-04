@@ -18,7 +18,7 @@ Now UI Dashboard is a responsive Bootstrap 4 kit provided for free by Invision a
 
 > Links
 
-- [Django Now UI](https://appseed.us/admin-dashboards/django-dashboard-nowui) - product page 
+- [Django Now UI](https://appseed.us/admin-dashboards/django-now-ui-dashboard) - product page 
 - [Django Now UI - Demo](https://django-now-ui-dashboard.appseed-srv1.com) - LIVE App
 - [Django Now UI - Docs](https://docs.appseed.us/admin-dashboards/django-dashboard-nowui/) - Documentation
 
