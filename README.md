@@ -44,7 +44,7 @@ Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
 
-![Django Now UI - Template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/django-now-ui-dashboard/master/media/django-dashboard-nowui-screen.png)
+![Django Now UI - Template project provided by AppSeed.](https://user-images.githubusercontent.com/51070104/143890496-34dbb951-6800-4509-a651-b7fea660f43d.gif)
 
 <br />
 
